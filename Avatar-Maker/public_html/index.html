@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.png" type="image/x-icon" />
+        <title>Avatar Maker</title>
+        <link href="assets/vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container" draggable="true" >
+            <div class="row" draggable="true">
+                <div class="col-xs-12 start-window" align="center">
+                    <h2 class="start-credits">Avatar maker by <a href="http://www.puzzleprime.com" class="link"> Puzzle Prime</a></h2>
+                    <button  id="start-button"  class="btn btn-lg btn-info">START</button>
+                    <h2 class="start-title"> Press the button to create your puzzle avatar.</h2>
+                </div>
+                <div style="" class="col-xs-12 col-md-8 col-lg-4 panel container-de-piezas hidden">
+                    <ul class="nav nav-tabs" id="tabs">
+                        <li role="presentation"><a href="#pelos">Hair</a></li>
+                        <li role="presentation" class="active"><a href="#ojos">Eyes</a></li>
+                        <li role="presentation"><a href="#bocas">Mouth</a></li>
+						<li role="presentation"><a href="#shirt">Shirt</a></li>
+						<li role="presentation"><a href="#facial">Extras</a></li>
+                    </ul>
+                    <div class="col-xs-12 container-de-piezas__caja">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade" id="ojos"  ondragover="allowDrop(event)"></div>
+                            <div role="tabpanel" class="tab-pane fade" id="bocas"   ondragover="allowDrop(event)">
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="pelos"   ondragover="allowDrop(event)">
+                            </div>
+							<div role="tabpanel" class="tab-pane fade" id="shirt" ondragover="allowDrop (event)"></div>
+							<div role="tabpanel" class="tab-pane fade" id="facial" ondragover="allowDrop (event)"></div>
+							<div role="tabpanel" class="tab-pane fade" id="accessoaries" ondragover="allowDrop (event)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-8 col-lg-8 ">
+                    <div class="row panel container-de-avatar hidden">
+                        <br>
+                        <div class="col-xs-12">
+                            <span id="nombre">
+                                <!-- AQUI EL NOMBRE DEL JUGADOR -->
+                            </span>
+                        </div>
+                        <div class="col-xs-10 container-de-avatar__caja"  ondrop="dropAvatar(event)" ondragover="allowDrop(event)">
+                            <!-- AQUI LAS PIEZAS DEL AVATAR -->
+                        </div>
+                        <div class="col-xs-1">
+                            <br>
+                            <button class="btn btn-lg piel piel__suntan-1 piel--active"></button>
+                            <br>
+                            <button class="btn btn-lg piel piel__suntan-2"></button>
+                            <br>
+                            <button class="btn btn-lg piel piel__suntan-3"></button>
+                            <br>
+                            <button class="btn btn-lg piel piel__suntan-4"></button>
+                        </div>
+                        <!--<div class="col-xs-12 container-de-generos">
+                       <!-- <button id="selector-masculino" class="btn btn-sm genero genero--masculino">
+                                <i class="fa fa-mars"></i>
+                            </button>
+                            <button id="selector-femenino" class="btn btn-md genero genero--femenino genero--femenino--active">
+                                <i class="fa fa-venus"></i>
+                            </button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL DE INICIO -->
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" align ="center">
+                 <!--       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                        <h1 class="modal-title">Pick your gender</h4>
+                    </div>
+                   <!-- <div class="modal-body">
+                         <div class="row">
+                           <div class="col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle"></i></span>
+                                    <input type="text" id="input-nombre" class="form-control" placeholder="Type in your name" aria-describedby="basic-addon1"> 
+                                </div> 
+                            </div>
+                         </div> 
+                       <div class="row">
+                            <div class="col-xs-12">
+                                <br>
+                                <h4>Gender</h4> 
+                                <div class="col-xs-6">
+                                    <span class="input-group-addon">
+                                        <input type="radio" id="chica" aria-label="..." name="genero" checked="" value="chica" class="genero--femenino">
+                                        <label for="chica"><i class="fa fa-venus icono"></i></label>
+                                    </span> 
+                                </div>
+                                <div class="col-xs-6">
+                                    <span class="input-group-addon">
+                                        <input type="radio" aria-label="..." id="chico" name="genero"  value="chico" class="genero--femenino">
+                                        <label for="chico"><i class="fa fa-mars icono"></i></label>
+                                    </span> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>-->
+				<!--	<div class="modal-footer"> -->
+                    <div class="modal-body">
+						<div class = "row">
+                           <div class="col-lg-6" align = "center">
+									<button type="button" class="btn  btn-girl"  id="chica" value = "chica"></button> <h3>GIRL</h3>
+							</div>
+                           <div class="col-lg-6" align = "center">
+									<button type="button" class="btn  btn-boy"  id="chico" value = "chico"></button> <h3> BOY</h3>
+							</div>
+						</div>
+<!--                        <button type="button" class="btn btn-default" data-dismiss="modal">Back<i class = "fas fa-venus icono"></i></button>
+                        <button type="button" id="boton-jugar" class="btn btn-info">Continue <i class="fa fa-mars icono"></i></button> -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="assets/vendor/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="assets/vendor/object-observe.min.js" type="text/javascript"></script>
+        <script src="assets/vendor/bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/modelo/AppState.js" type="text/javascript"></script>
+        <script src="assets/js/modelo/Pieza.js" type="text/javascript"></script>
+        <script src="assets/js/servicio/PiezasApi.service.js" type="text/javascript"></script>
+        <script src="assets/js/controlador/eventos.controller.js" type="text/javascript"></script>
+        <script src="assets/js/init.js" type="text/javascript"></script>
+       <script src="assets/js/log.js" type="text/javascript"></script>
+    </body>
+</html>

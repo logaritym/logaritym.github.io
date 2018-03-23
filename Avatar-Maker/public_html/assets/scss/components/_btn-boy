@@ -1,0 +1,12 @@
+.btn-boy{
+    background-image:  url('../images/boy.png');
+    background-size:100% 99%;
+    background-repeat: no-repeat;
+    &:hover{
+        color: white;
+        background-image:  url('../images/boy.png');
+        background-size:100% 99%;
+        background-repeat: no-repeat;
+
+    }
+}

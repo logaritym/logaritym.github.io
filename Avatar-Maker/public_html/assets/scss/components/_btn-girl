@@ -1,0 +1,12 @@
+.btn-girl{
+    background-image:  url('../images/girl.png');
+    background-size:100% 99%;
+    background-repeat: no-repeat;
+    &:hover{
+        color: white;
+        background-image:  url('../images/girl.png');
+        background-size:100% 99%;
+        background-repeat: no-repeat;
+
+    }
+}
